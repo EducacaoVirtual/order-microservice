@@ -1,0 +1,168 @@
+2025-03-09 23:23:34 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-09 23:23:34 [main] INFO  com.order.OrderApiApplication - Starting OrderApiApplication using Java 21.0.6 with PID 148704 (/home/alexandre/Documents/tech-studies/springboot/order-api/target/classes started by alexandre in /home/alexandre/Documents/tech-studies/springboot/order-api)
+2025-03-09 23:23:34 [main] INFO  com.order.OrderApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-09 23:23:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-09 23:23:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 1 JPA repository interface.
+2025-03-09 23:23:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-03-09 23:23:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:23:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-09 23:23:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-09 23:23:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-09 23:23:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6192 ms
+2025-03-09 23:23:42 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-09 23:23:42 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-09 23:23:42 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-09 23:23:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-09 23:23:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Starting...
+2025-03-09 23:23:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - order-api-pool - Added connection org.postgresql.jdbc.PgConnection@69ac5752
+2025-03-09 23:23:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Start completed.
+2025-03-09 23:23:44 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-09 23:23:44 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (order-api-pool)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-09 23:23:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-09 23:23:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:23:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-09 23:23:47 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-03-09 23:23:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:23:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2025-03-09 23:23:47 [main] INFO  com.order.OrderApiApplication - Started OrderApiApplication in 14.679 seconds (process running for 16.575)
+2025-03-09 23:24:01 [http-nio-0.0.0.0-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-09 23:24:01 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-09 23:24:01 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-09 23:26:49 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-09 23:26:49 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-09 23:26:49 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:26:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown initiated...
+2025-03-09 23:26:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown completed.
+2025-03-09 23:38:19 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-09 23:38:19 [main] INFO  com.order.OrderApiApplication - Starting OrderApiApplication using Java 21.0.6 with PID 149617 (/home/alexandre/Documents/tech-studies/springboot/order-api/target/classes started by alexandre in /home/alexandre/Documents/tech-studies/springboot/order-api)
+2025-03-09 23:38:19 [main] INFO  com.order.OrderApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-09 23:38:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-09 23:38:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
+2025-03-09 23:38:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-03-09 23:38:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:38:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-09 23:38:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-09 23:38:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-09 23:38:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2059 ms
+2025-03-09 23:38:21 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-09 23:38:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-09 23:38:21 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-09 23:38:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-09 23:38:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Starting...
+2025-03-09 23:38:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - order-api-pool - Added connection org.postgresql.jdbc.PgConnection@53ddabc6
+2025-03-09 23:38:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Start completed.
+2025-03-09 23:38:22 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-09 23:38:22 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (order-api-pool)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-09 23:38:23 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-09 23:38:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:38:23 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-09 23:38:24 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-03-09 23:38:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:38:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2025-03-09 23:38:24 [main] INFO  com.order.OrderApiApplication - Started OrderApiApplication in 6.47 seconds (process running for 6.91)
+2025-03-09 23:38:31 [http-nio-0.0.0.0-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-09 23:38:31 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-09 23:38:31 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-09 23:40:17 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-09 23:40:17 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-09 23:40:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:40:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown initiated...
+2025-03-09 23:40:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown completed.
+2025-03-09 23:41:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-09 23:41:02 [main] INFO  com.order.OrderApiApplication - Starting OrderApiApplication using Java 21.0.6 with PID 149931 (/home/alexandre/Documents/tech-studies/springboot/order-api/target/classes started by alexandre in /home/alexandre/Documents/tech-studies/springboot/order-api)
+2025-03-09 23:41:02 [main] INFO  com.order.OrderApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-09 23:41:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-09 23:41:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-03-09 23:41:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-03-09 23:41:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:41:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-09 23:41:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-09 23:41:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-09 23:41:04 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2177 ms
+2025-03-09 23:41:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-09 23:41:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-09 23:41:04 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-09 23:41:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-09 23:41:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Starting...
+2025-03-09 23:41:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - order-api-pool - Added connection org.postgresql.jdbc.PgConnection@2a20da9f
+2025-03-09 23:41:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Start completed.
+2025-03-09 23:41:05 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-09 23:41:05 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (order-api-pool)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-09 23:41:06 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-09 23:41:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:41:07 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-09 23:41:08 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-03-09 23:41:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:41:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2025-03-09 23:41:08 [main] INFO  com.order.OrderApiApplication - Started OrderApiApplication in 6.94 seconds (process running for 7.466)
+2025-03-09 23:41:16 [http-nio-0.0.0.0-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-09 23:41:16 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-09 23:41:16 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-09 23:41:19 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-09 23:41:19 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-09 23:41:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:41:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown initiated...
+2025-03-09 23:41:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown completed.
+2025-03-09 23:42:35 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-09 23:42:35 [main] INFO  com.order.OrderApiApplication - Starting OrderApiApplication using Java 21.0.6 with PID 150092 (/home/alexandre/Documents/tech-studies/springboot/order-api/target/classes started by alexandre in /home/alexandre/Documents/tech-studies/springboot/order-api)
+2025-03-09 23:42:35 [main] INFO  com.order.OrderApiApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-09 23:42:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-09 23:42:36 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 1 JPA repository interface.
+2025-03-09 23:42:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2025-03-09 23:42:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:42:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-09 23:42:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-09 23:42:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-09 23:42:37 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2169 ms
+2025-03-09 23:42:37 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-09 23:42:37 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-09 23:42:37 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-09 23:42:38 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-09 23:42:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Starting...
+2025-03-09 23:42:38 [main] INFO  com.zaxxer.hikari.pool.HikariPool - order-api-pool - Added connection org.postgresql.jdbc.PgConnection@50ef2906
+2025-03-09 23:42:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Start completed.
+2025-03-09 23:42:38 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-09 23:42:38 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (order-api-pool)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-09 23:42:39 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-09 23:42:39 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:42:40 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-09 23:42:40 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-03-09 23:42:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8083"]
+2025-03-09 23:42:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/'
+2025-03-09 23:42:41 [main] INFO  com.order.OrderApiApplication - Started OrderApiApplication in 6.729 seconds (process running for 7.161)
+2025-03-09 23:42:46 [http-nio-0.0.0.0-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-09 23:42:46 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-09 23:42:46 [http-nio-0.0.0.0-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-03-09 23:43:41 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-09 23:43:41 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-09 23:43:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 23:43:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown initiated...
+2025-03-09 23:43:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - order-api-pool - Shutdown completed.

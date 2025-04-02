@@ -1,0 +1,165 @@
+version: '3.8'
+
+services:
+  # Load Balancer Nginx
+  eduvirtual-nginx-lb:
+    build: ./nginx
+    image: eduvirtual-lb-nginx:1.0
+    container_name: eduvirtual-nginx
+    ports:
+      - "8085:80"
+    depends_on:
+      - eduvirtual-orderapi-01
+      - eduvirtual-orderapi-02
+    networks:
+      - eduvirtualnet
+
+  # Instance 1 of Order API
+  eduvirtual-orderapi-01:
+    image: order-api:1.0
+    container_name: eduvirtual-orderapi-01
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eduvirtual-pgbouncer
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://eduvirtual-pgbouncer:6432/orderapi?sslmode=disable
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: educacaovirtual2025
+      SPRING_PROFILES_ACTIVE: local
+      management.endpoints.web.exposure.include: "health,prometheus,metrics"
+      management.endpoint.health.show-details: always
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - eduvirtualnet
+
+  # Instance 2 of Order API
+  eduvirtual-orderapi-02:
+    image: order-api:1.0
+    container_name: eduvirtual-orderapi-02
+    ports:
+      - "8084:8083"
+    depends_on:
+      - eduvirtual-pgbouncer
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://eduvirtual-pgbouncer:6432/orderapi?sslmode=disable
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: educacaovirtual2025
+      SPRING_PROFILES_ACTIVE: local
+      management.endpoints.web.exposure.include: "health,prometheus,metrics"
+      management.endpoint.health.show-details: always
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-primary:
+    image: postgres
+    container_name: eduvirtual-primary
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: educacaovirtual2025
+      POSTGRES_DB: orderapi
+    volumes:
+      - ./primary-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-replica-1:
+    image: postgres
+    container_name: eduvirtual-replica-1
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: educacaovirtual2025
+      POSTGRES_DB: orderapi
+      REPLICA: "true"
+      PRIMARY_HOST: eduvirtual-primary
+    depends_on:
+      - eduvirtual-primary
+    volumes:
+      - ./replica1-data:/var/lib/postgresql/data
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-replica-2:
+    image: postgres
+    container_name: eduvirtual-replica-2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: educacaovirtual2025
+      POSTGRES_DB: orderapi
+      REPLICA: "true"
+      PRIMARY_HOST: eduvirtual-primary
+    depends_on:
+      - eduvirtual-primary
+    volumes:
+      - ./replica2-data:/var/lib/postgresql/data
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-pgbouncer:
+    image: edoburu/pgbouncer
+    container_name: eduvirtual-pgbouncer
+    restart: always
+    environment:
+      DB_HOST: eduvirtual-primary
+      DB_USER: postgres
+      DB_PASSWORD: educacaovirtual2025
+      POOL_MODE: transaction
+    ports:
+      - "6432:6432"
+    depends_on:
+      - eduvirtual-primary
+      - eduvirtual-replica-1
+      - eduvirtual-replica-2
+    volumes:
+      - ./pgbouncer/pgbouncer.ini:/etc/pgbouncer/pgbouncer.ini
+      - ./pgbouncer/userlist.txt:/etc/pgbouncer/userlist.txt
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-prometheus:
+    image: bitnami/prometheus:2.55.1
+    container_name: eduvirtual-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml
+    networks:
+      - eduvirtualnet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  eduvirtual-grafana:
+    image: grafana/grafana:latest
+    container_name: eduvirtual-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+    networks:
+      - eduvirtualnet
+
+  eduvirtual-loki:
+    image: grafana/loki:latest
+    container_name: eduvirtual-loki
+    command:
+      - '-config.file=/etc/loki/local-config.yaml'
+      - '-print-config-stderr=true'
+    ports:
+      - "3100:3100"
+    environment:
+      - LOKI_LOG_LEVEL=debug
+    networks:
+      - eduvirtualnet
+
+networks:
+  eduvirtualnet:
+    driver: bridge
+    external: true

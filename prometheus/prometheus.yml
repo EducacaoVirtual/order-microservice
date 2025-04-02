@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+
+scrape_configs:
+  - job_name: 'eduvirtual-orderapi-01'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.15.81:8083']
+        labels:
+          application: 'eduvirtual-orderapi-01'
+
+  - job_name: 'eduvirtual-orderapi-02'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.15.81:8084']
+        labels:
+          application: 'eduvirtual-orderapi-02'

@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: Order API
+  description: API for managing orders
+  version: 1.0.0
+
+paths:
+  /orders:
+    post:
+      summary: Create a new order
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        "201":
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    get:
+      summary: Get all orders
+      operationId: getOrders
+      responses:
+        "200":
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderResponse'
+  /orders/{orderId}:
+    get:
+      summary: Get order by ID
+      operationId: getOrderById
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Order found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        "404":
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    OrderId:
+      type: object
+      properties:
+        value:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+    OrderItem:
+      type: object
+      properties:
+        productId:
+          type: string
+          format: uuid
+          example: "abc12345-6789-0123-4567-89abcdef0123"
+        quantity:
+          type: integer
+          example: 2
+    OrderRequest:
+      type: object
+      required:
+        - customerId
+        - items
+        - totalAmount
+      properties:
+        customerId:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        totalAmount:
+          type: string
+          format: BigDecimal
+          example: "149.99"
+    OrderResponse:
+      type: object
+      properties:
+        customerId:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        totalAmount:
+          type: string
+          format: BigDecimal
+          example: "149.99"
+    ErrorResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          example: "2024-02-23T10:00:00Z"
+        status:
+          type: integer
+          example: 400
+        error:
+          type: string
+          example: "Bad Request"
+        message:
+          type: string
+          example: "Invalid input data"
+        path:
+          type: string
+          example: "/orders"

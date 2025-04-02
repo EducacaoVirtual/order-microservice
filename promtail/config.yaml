@@ -1,0 +1,23 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: ./position/positions.yaml
+
+clients:
+  - url: http://eduvirtual-loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: order-api
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: varlogs
+          __path__: /logs/syslogs/*log
+      - targets:
+          - localhost
+        labels:
+          job: order-api
+          __path__: /logs/*log
